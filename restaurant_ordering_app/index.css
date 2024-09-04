@@ -30,15 +30,29 @@ body {
     padding: 2rem;
 }
 
-.header__title {
+p{
+    color: black;
+}
+
+.header__title, .itemName{
     margin: 0rem 0rem 0.5rem 0rem;
     font-size: 2rem;
     font-weight: 600;
 }
 
-.header__subtitle {
+.header__subtitle, .itemIngredients {
     margin: 0rem 0rem 0.5rem 0rem;
     font-size: 1rem;
     font-weight: 400;
 }
+
+.itemContainer{
+    display: flex;
+}
+
+.itemImage{
+    width: 4rem;
+    height: 4rem;
+}
+
 
