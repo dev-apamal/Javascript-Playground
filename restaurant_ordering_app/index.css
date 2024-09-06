@@ -5,54 +5,34 @@ body {
     font-style: normal;
     font-size: 16px;
     width: 100%;
-    max-width: 600px;
 } 
 
-.header {
+h1, h2, h3, h4, p{
+    margin: 0;
+}
+
+img{
+    display: block; 
+    width: 100%; 
+    height: auto;
+}
+
+.header{
     position: relative;
-    width: 100%;
     height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
 }
 
-.header__image {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.header__overlay {
+.headerContent{
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
     position: absolute;
-    top: 50%;
-    left: 25%;
+    top: 50%; /* Position text vertically centered */
+    left: 25%; /* Position text horizontally centered */
     transform: translate(-50%, -50%);
     color: white;
-    text-align: left;
-    padding: 2rem;
 }
-
-p{
-    color: black;
-}
-
-.header__title, .itemName{
-    margin: 0rem 0rem 0.5rem 0rem;
-    font-size: 2rem;
-    font-weight: 600;
-}
-
-.header__subtitle, .itemIngredients {
-    margin: 0rem 0rem 0.5rem 0rem;
-    font-size: 1rem;
-    font-weight: 400;
-}
-
-.itemContainer{
-    display: flex;
-}
-
-.itemImage{
-    width: 4rem;
-    height: 4rem;
-}
-
-
