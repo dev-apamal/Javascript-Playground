@@ -2,8 +2,18 @@ import { menuArray } from './data.js'
 const feed = document.getElementById('feed')
 
 document.addEventListener('click', function(e){
-    console.log(e.target.id)
+    if(e.target.dataset.add){
+        addItem(e.target.dataset.add)
+    }
 })
+
+function addItem(itemId){  
+    const targetObject = menuArray.find(function(item){
+        return item.id == itemId; 
+    })
+    console.log(targetObject);
+}
+
 
 function getMenu(){
     const menu = menuArray.map(function(items){
@@ -17,7 +27,7 @@ function getMenu(){
             <h3>${items.price}</h3>
           </div>
         </div>
-        <div class="plusBtn"><i class="fa-solid fa-plus" id="${items.id}"></i></div>
+        <div class="plusBtn"><i class="fa-solid fa-plus" data-add="${items.id}"></i></div>
       </div>`
     }).join('')
     return menu

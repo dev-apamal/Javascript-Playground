@@ -47,7 +47,7 @@ img{
 
 .itemContainer{
     display: flex;
-    border-bottom: 1px solid rgba(145, 145, 145, 0.2);
+    border-bottom: 1px solid rgba(170, 170, 170, 0.1);
     padding: 1rem;
     margin: 1.5rem;
     align-items: center;
@@ -65,3 +65,52 @@ img{
     align-items: start;
     gap: 0.5rem;
 }
+
+.itemDetails{
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.checkoutSection {
+    position: fixed;
+    bottom: 0;
+    width: 100vw; /* Full width of the viewport */
+    padding: 1rem;
+    background-color: white; /* Ensure a visible background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.3);
+  }
+  
+  .checkoutItem, .totalContainer {
+    display: flex;
+    justify-content: space-between; /* Space between item name and price */
+    align-items: center;
+    width: 100%; /* Full width */
+    max-width: 400px; /* Max width for readability */
+  }
+  
+  .checkoutItem h3, .checkoutItem p {
+    margin: 0; /* Removes extra margins */
+  }
+  
+  .itemPrice, .totalPrice {
+    text-align: right; /* Align price to the right */
+    min-width: 50px; /* Ensure price doesn't shrink */
+    flex-shrink: 0;
+  }
+
+  button{
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    font-size: 1rem;
+    font-family: "Smythe", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    background: #16DB99;
+  }
