@@ -1,17 +1,33 @@
 import { menuArray } from './data.js'
 const feed = document.getElementById('feed')
+const checkout = document.getElementById('checkout')
+const cart = []
 
 document.addEventListener('click', function(e){
     if(e.target.dataset.add){
-        addItem(e.target.dataset.add)
+      renderCheckout(e.target.dataset.add)
     }
 })
+
 
 function addItem(itemId){  
     const targetObject = menuArray.find(function(item){
         return item.id == itemId; 
     })
-    console.log(targetObject);
+    if(!cart.includes(targetObject)){
+      cart.push(targetObject)
+    }
+    return cart
+}
+
+function renderCheckout(itemId){
+  const updatedCart = addItem(itemId)
+  const getPrice = updatedCart.map(function(item){
+    return item.price
+  })
+  const totalPrice = getPrice.reduce(function(x, y){
+    return x+y;
+  },0)
 }
 
 
