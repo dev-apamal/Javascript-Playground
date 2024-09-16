@@ -7,6 +7,18 @@ body {
     width: 100%;
 } 
 
+button{
+    background: #16DB99;
+    border: none;
+    color: white;
+    padding: 1rem;
+    width: 100%;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.5rem; 
+}
+
 h1, h2, h3, h4, p{
     margin: 0;
 }
@@ -72,3 +84,26 @@ img{
     gap: 0.25rem;
 }
 
+.footercheckout{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.itemsincart{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.totalPrice{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
