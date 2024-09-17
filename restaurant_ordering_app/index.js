@@ -1,6 +1,7 @@
 import { menuArray } from './data.js'
 const feed = document.getElementById('feed')
 const footercheckout = document.getElementById('footercheckout')
+const checkoutModal = document.getElementById('checkout-modal') // Checkout Popup
 const cart = []
 
 document.addEventListener('click', function(e){
@@ -8,7 +9,6 @@ document.addEventListener('click', function(e){
       addItem(e.target.dataset.add)
     }
 })
-
 
 // Function to add an item to the cart
 function addItem(itemId) {
@@ -26,16 +26,7 @@ function addItem(itemId) {
 
 // Function to render the checkout section with cart items and total price
 function renderCheckout() {
-  // If the cart is empty, display a message
-  if (cart.length === 0) {
-    footercheckout.innerHTML = `
-      <h2>Your Order</h2>
-      <p>Your cart is empty.</p>
-      <button disabled>Complete Order</button>
-    `;
-    return;
-  }
-
+ 
   // Generate the HTML for each item in the cart
   const cartItemsHTML = cart.map(function(item) {
     return `
@@ -59,15 +50,13 @@ function renderCheckout() {
       <h3>Total:</h3>
       <h3>$${totalPrice}</h3>
     </div>
-    <button>Complete Order</button>
+    <button class="completeOrder">Complete Order</button>
   `
 }
 
-
 function getMenu(){
     const menu = menuArray.map(function(items){
-        return `
-      <div class="itemContainer">
+        return `<div class="itemContainer">
         <div class="itemImageAndDetailsHolder">
           <div class="itemImage"><img src="${items.image}" /></div>
           <div class="itemDetails">
