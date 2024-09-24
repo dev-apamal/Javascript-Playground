@@ -1,6 +1,5 @@
 import { menuArray } from './data.js'
 const feed = document.getElementById('feed')
-const footercheckout = document.getElementById('footercheckout')
 const cart = []
 
 document.addEventListener('click', function(e){
@@ -12,8 +11,13 @@ document.addEventListener('click', function(e){
         checkoutModal.style.display = 'flex'
     }
     else if(e.target.id === "submit"){
-        const checkoutModal = document.getElementById('checkout-modal') 
+        const checkoutModal = document.getElementById('checkout-modal')
+        const footercheckout = document.getElementById('footercheckout')
+        const orderConfirmation = document.getElementById('orderConfirmation')
         checkoutModal.style.display = 'none'
+        footercheckout.style.display = 'none'
+        orderConfirmation.style.display = 'flex'
+
     }
 })
 
@@ -28,7 +32,7 @@ function addItem(itemId) {
 
 
 function renderCheckout() {
-
+  const footercheckout = document.getElementById('footercheckout')
   const cartItemsHTML = cart.map(function(item) {
     return `
       <div class="itemsincart">

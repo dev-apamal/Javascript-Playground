@@ -156,3 +156,13 @@ img{
   input[type=submit]:hover {
     background-color: #45a049;
   } 
+
+  .orderConfirmation{
+    display: none;
+    padding: 2rem;
+    margin: 1rem;
+    justify-content: center;
+    align-items: center;
+    background-color: #ECFDF5;
+    color: #065F46;
+  }
