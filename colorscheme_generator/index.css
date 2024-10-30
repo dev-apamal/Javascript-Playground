@@ -28,3 +28,34 @@ select, button{
     padding: 0.5rem 1rem 0.5rem 1rem;
     background-color: white;
 }
+
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    height: 80vh;
+}
+
+.color1, .color2, .color3, .color4, .color5{
+    height: 100%;
+}
+
+.color1{
+    background: #2ecc71;
+}
+
+.color2{
+    background: red;
+}
+
+.color3{
+    background: blue;
+}
+
+.color4{
+    background: green;
+}
+
+.color5{
+    background: blueviolet;
+}
