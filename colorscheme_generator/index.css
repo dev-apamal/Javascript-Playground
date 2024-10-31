@@ -2,6 +2,7 @@ body{
     font-family: Roboto;
     font-size: 16px;
     margin: 0;
+    height: 100%;
 }
 
 header{
@@ -33,15 +34,20 @@ main{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
-    height: 80vh;
+    height: 90vh;
+    width: 100%;
 }
 
-.color1, .color2, .color3, .color4, .color5{
-    height: 100%;
+footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    height: 10vh;
 }
 
 .color1{
     background: #2ecc71;
+    
 }
 
 .color2{
@@ -58,4 +64,12 @@ main{
 
 .color5{
     background: blueviolet;
+}
+
+.color-name{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
 }
