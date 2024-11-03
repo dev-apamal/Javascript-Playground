@@ -38,6 +38,26 @@ main{
     width: 100%;
 }
 
+/* #seedColor{
+    background: blue;
+}
+
+#color2{
+    background: red;
+}
+
+#color3{
+    background: black;
+}
+
+#color4{
+    background: green;
+}
+
+#color5{
+    background: pink;
+} */
+
 footer{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -45,28 +65,7 @@ footer{
     height: 10vh;
 }
 
-.seedcolor{
-    background: #2ecc71;
-    
-}
-
-.color2{
-    background: red;
-}
-
-.color3{
-    background: blue;
-}
-
-.color4{
-    background: green;
-}
-
-.color5{
-    background: blueviolet;
-}
-
-.footer-hexcode{
+.footerItem{
     display: flex;
     text-align: center;
     justify-content: center;
