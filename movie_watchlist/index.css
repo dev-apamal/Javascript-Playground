@@ -11,7 +11,45 @@ header{
     justify-content: center;
     align-items: center;
     gap: 5rem;
-    padding: 2.5rem 1.5rem 2.5rem 1.5rem;
+    padding: 2.5rem 1rem 2.5rem 1rem;
     color: white;
+    background-image: url('assets/images/THJJRUhNlEc.png');
+    background-color: rgba(0, 0, 0, 0.7);
+    background-blend-mode: overlay;
     border: 1px solid black;
+}
+
+h1{
+    margin: 0;
+    line-height: normal;
+}
+
+main{
+    display: flex;
+    background-color: #121212;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    font-size: 0.875rem;
+    font-weight: bold;
+    border: none;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#empty{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    color: #2E2E2F;
+}
+
+#empty h1{
+    font-size: 1rem;
 }
