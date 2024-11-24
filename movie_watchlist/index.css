@@ -1,5 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body{
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
     font-size: 16px;
     margin: 0;
     padding: 0;
@@ -33,7 +39,7 @@ main{
     align-items: center;
 }
 
-button{
+#watchlistBtn{
     font-size: 0.875rem;
     font-weight: bold;
     border: none;
@@ -52,4 +58,35 @@ button{
 
 #empty h1{
     font-size: 1rem;
+}
+
+form{
+    background: #2E2E2F;
+    width: 25rem;
+    height: 2.5rem;
+    display: flex; 
+    background: #2E2E2F;
+}
+
+form input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: #2E2E2F;
+    color: #A5A5A5;
+}
+
+form button{
+    background: #4B4B4B;
+    color: white;
+    padding: 0.625rem 3.125rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+form .fa-magnifying-glass{
+    align-self: center;
+    color: #9CA3AF;
+    padding: 0.625rem 1rem;
 }
