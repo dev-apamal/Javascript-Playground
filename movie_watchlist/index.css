@@ -62,6 +62,8 @@ main{
 
 form{
     background: #2E2E2F;
+    position: absolute;
+    top: 7rem;
     width: 25rem;
     height: 2.5rem;
     display: flex; 
@@ -89,4 +91,12 @@ form .fa-magnifying-glass{
     align-self: center;
     color: #9CA3AF;
     padding: 0.625rem 1rem;
+}
+
+.resultContainer{
+    display: flex;
+    margin: 1.5rem;
+    padding: 1.5rem;
+    gap: 1rem;
+    color: white;
 }
