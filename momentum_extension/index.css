@@ -13,3 +13,27 @@ body, html {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+header, main, footer{
+    display: flex;
+    padding: 0.5rem;
+    border: 1px solid black;
+}
+
+header{
+    justify-content: space-between;
+    align-items: start;
+}
+
+p, h2{
+    margin: 0;
+    padding: 0;
+}
+
+#weatherData{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+    color: white;
+}
