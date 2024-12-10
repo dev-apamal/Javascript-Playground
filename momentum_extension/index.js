@@ -1,17 +1,22 @@
 const bgImage = document.getElementById('bg')
+const photoCredit = document.getElementById('photoCredit')
 const weatherData = document.getElementById('weatherData')
+const currentTime = document.getElementById('currentTime')
+const cryptoData = document.getElementById('cryptoData')
 
 // async function getBackgroundImage() {
-//     let random = Math.floor(Math.random()*10)
 //     const response = await fetch("https://api.unsplash.com/search/photos?query=Dubai&client_id=RtuxLQyMYHe3dJtZqEMNCGp7BB3kAPa6qoIFqMGIv3Q");
 //     const data = await response.json();
-//     return data.results[random].urls.full; 
+//     return data
 // }
 
 // async function renderBackgroundImage() {
 //     try {
+//         let random = Math.floor(Math.random()*10)
 //         const imageUrl = await getBackgroundImage(); // Wait for the image URL
-//         bgImage.style.backgroundImage = `url(${imageUrl})`; // Set the background image
+//         bgImage.style.backgroundImage = `url(${imageUrl.results[random].urls.full})`; // Set the background image
+//         photoCredit.innerHTML = `<p>by ${imageUrl.results[random].user.name}</p>`
+//         console.log(imageUrl.results[random])
 //     } catch (error) {
 //         console.error("Error fetching or rendering the background image:", error);
 //     }
@@ -29,7 +34,7 @@ const weatherData = document.getElementById('weatherData')
 //     try{
 //         const locationData = await accessWeather();
 //         console.log(locationData)
-//         weatherData.innerHTML = `<h2>${locationData.main.temp}°</h2>
+//         weatherData.innerHTML = `<h2>${locationData.main.temp}°C</h2>
 //             <p>${locationData.name}</p>`;
 //     } catch(error){
 //         console.error("Error fetching or rendering the current weather:", error);
@@ -37,3 +42,11 @@ const weatherData = document.getElementById('weatherData')
 // }
 
 // renderWeatherData();
+
+function renderTime(){
+    const now = new Date()
+    const current = now.toLocaleTimeString()
+    currentTime.innerHTML = `<h1>${current}</h1>`
+}
+
+renderTime()

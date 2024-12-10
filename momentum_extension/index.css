@@ -1,7 +1,21 @@
+* {
+    box-sizing: border-box;
+}   
+
 body, html {
     height: 100%;
     font-size: 16px;
     margin: 0;
+    color: white;
+    font-family: Poppins;
+}
+
+.wrapper {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    background-color: black;
 }
   
 #bg{
@@ -16,8 +30,7 @@ body, html {
 
 header, main, footer{
     display: flex;
-    padding: 0.5rem;
-    border: 1px solid black;
+    padding: 1rem;
 }
 
 header{
@@ -25,7 +38,18 @@ header{
     align-items: start;
 }
 
-p, h2{
+main{
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    color: white;
+}
+
+h1{
+    font-size: 2.5rem;
+}
+
+p, h2, h1{
     margin: 0;
     padding: 0;
 }
@@ -36,4 +60,15 @@ p, h2{
     justify-content: end;
     align-items: end;
     color: white;
+    background-color: rgba(208, 208, 208, 0.5);
+    padding: 0.5rem;
 }
+
+#photoCredit{
+    padding: 0.5rem;
+    font-size: 12px;
+    background-color: rgba(208, 208, 208, 0.5);
+    color: white;
+    border: none;
+}
+
