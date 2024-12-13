@@ -31,3 +31,37 @@ nav{
 .logoImage{
   width: 2.5rem;
 }
+
+main{
+  background-color: #282D35;
+  height: 100vh;
+  color: white;
+  padding: 2.5rem 1.5rem;
+  background-image: url("./assets/react-lowopacity.png");
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: 20%;
+}
+
+main > h1{
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+li{
+  font-size: 1rem;
+  line-height: 2rem;
+}
+
+li::before {
+  content: "\2022";
+  color: #61DAFB; 
+  display: inline-block; 
+  margin-left: -1em; 
+  width: 1em;
+  font-size: 1rem;
+} 
+
+ul{
+  list-style-type: none;
+}
