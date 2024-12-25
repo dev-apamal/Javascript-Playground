@@ -59,4 +59,33 @@ input[type="submit"]{
   padding: 1rem;
   border-radius: 0.5rem;
   border: none;
+  cursor: pointer;
+}
+
+.recipeContainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #F0EFEB;
+  padding: 1rem;
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+}
+
+.recipeContainer > p{
+  color: #6B7280;
+}
+
+.recipeContainer > h4{
+  color: #141413;
+  margin: 0;
+}
+
+.getRecipe{
+  background-color: #D17557;
+  border: none;
+  padding: 1rem;
+  color: white;
+  border-radius: 0.5rem;
+  cursor: pointer;
 }

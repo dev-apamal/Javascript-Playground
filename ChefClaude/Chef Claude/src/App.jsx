@@ -19,10 +19,14 @@ export default function App() {
     event.target.reset();
   }
 
+  function getRecipe(){
+    console.log("Here's your recipe")
+  }
+
   return (
     <>
       <Header />
-      <Search handleSubmit={handleSubmit} ingredientList={ingredientList} />
+      <Search handleSubmit={handleSubmit} ingredientList={ingredientList} getRecipe={getRecipe}/>
     </>
   );
 }
