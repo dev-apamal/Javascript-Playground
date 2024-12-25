@@ -33,3 +33,30 @@ form{
 .logoText{
   font-size: 2rem;
 }
+
+.ingredientList{
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  color: #141413;
+}
+
+li{
+  color: #475467;
+  margin-bottom: 1rem;
+}
+
+input[type="text"]{
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  flex: 1;
+}
+
+input[type="submit"]{
+  background-color: #141413;
+  color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+}
