@@ -14,6 +14,18 @@ header{
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
+main{
+  background-color: #FAFAF8;
+  padding: 2.5rem 1rem;
+}
+
+form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .logoIcon{
   width: 40px;
 }
