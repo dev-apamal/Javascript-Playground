@@ -1,5 +1,8 @@
 export default function Header(){
     return (
-        <h5>This is header</h5>
+        <header>
+            <img src="./src/assets/images/Chef Claude Icon.png" alt="Logo Icon" className="logoIcon"/>
+            <span className="logoText">Chef Claude</span>
+        </header>
     )
 }
