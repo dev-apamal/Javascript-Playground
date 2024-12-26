@@ -1,4 +1,5 @@
 import Header from "./components/Header";
+import Recipe from "./components/Recipe";
 import Search from "./components/Search";
 import React from "react";
 
@@ -20,7 +21,7 @@ export default function App() {
   }
 
   function getRecipe(){
-    console.log("Here's your recipe")
+    console.log("Apple")
   }
 
   return (

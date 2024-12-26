@@ -1,12 +1,11 @@
 {
-  "name": "chef-claude",
+  "name": "chef_claude",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview",
     "lint": "eslint .",
     "preview": "vite preview"
   },
