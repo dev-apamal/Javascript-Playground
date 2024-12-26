@@ -1,9 +1,12 @@
 import Header from "./components/Header";
 import Search from "./components/Search";
+import IngredientsList from "./components/IngredientsList";
 import React from "react";
+import Recipe from "./components/Recipe";
 
 export default function App() {
   const [ingredient, setIngredient] = React.useState([]);
+  const [getRecipe, setGetRecipe] = React.useState(false)
 
   const ingredientList = ingredient.map((item, index) => (
     <li key={index}>{item}</li>
@@ -18,15 +21,17 @@ export default function App() {
     }
     event.target.reset();
   }
-
-  function getRecipe(){
-    console.log("Apple")
+  
+  function changeRecipeStatus(){
+    return setGetRecipe(prevRecipe => !prevRecipe)
   }
 
   return (
     <>
       <Header />
-      <Search handleSubmit={handleSubmit} ingredientList={ingredientList} getRecipe={getRecipe}/>
+      <Search handleSubmit={handleSubmit}/>
+      <IngredientsList ingredientList={ingredientList} getRecipe={changeRecipeStatus}/>
+      <Recipe getRecipe={getRecipe}/>
     </>
   );
 }
