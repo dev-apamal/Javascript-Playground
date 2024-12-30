@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function Form() {
   return (
     <form className="flex justify-between flex-col sm:flex-row gap-4">

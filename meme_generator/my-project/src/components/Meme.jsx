@@ -1,7 +1,15 @@
-export default function Meme() {
+import React from "react";
+
+export default function Meme(props) {
+  const defaultImage = "./src/assets/image.png";
+
   return (
     <div className="meme relative text-center my-4 px-1.5">
-      <img src="./src/assets/image.png" alt="Meme" className="w-full rounded" />
+      <img
+        src={props.src ? props.src : defaultImage}
+        alt="Meme"
+        className="w-full rounded"
+      />
       <span
         className="absolute top-0 left-1/2 transform -translate-x-1/2 mt-4 px-1.5 font-impact text-2xl uppercase text-white tracking-wide"
         style={{
