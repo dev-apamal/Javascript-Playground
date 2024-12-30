@@ -5,9 +5,12 @@ import React from "react";
 
 export default function App() {
   const [randomMeme, setRandomMeme] = React.useState([]);
-  const [imageUrl, setImageUrl] = React.useState("");
-  const [topText, setTopText] = React.useState("");
-  const [bottomText, setBottomText] = React.useState("");
+  const [meme, setMeme] = React.useState({
+    imageUrl: "",
+    topText: "",
+    bottomText: "",
+  });
+
   React.useEffect(function getRandomMeme() {
     fetch("https://api.imgflip.com/get_memes")
       .then((response) => response.json())
@@ -15,15 +18,27 @@ export default function App() {
   }, []);
 
   function getImage() {
-    setImageUrl(randomMeme[Math.floor(Math.random() * randomMeme.length)].url);
+    const randomIndex = Math.floor(Math.random() * randomMeme.length);
+    setMeme((prevMeme) => ({
+      ...prevMeme,
+      imageUrl: randomMeme[randomIndex].url,
+    }));
   }
 
   function handleTopChange(e) {
-    setTopText(e.target.value);
+    const { value } = e.target;
+    setMeme((prevMeme) => ({
+      ...prevMeme,
+      topText: value,
+    }));
   }
 
   function handleBottomChange(e) {
-    setBottomText(e.target.value);
+    const { value } = e.target;
+    setMeme((prevMeme) => ({
+      ...prevMeme,
+      bottomText: value,
+    }));
   }
 
   return (
@@ -33,6 +48,8 @@ export default function App() {
         <TextForm
           handleTopChange={handleTopChange}
           handleBottomChange={handleBottomChange}
+          topTextState={meme.topTextState}
+          bottomTextState={meme.bottomTextState}
         />
         <button
           onClick={getImage}
@@ -40,7 +57,11 @@ export default function App() {
         >
           Get a new meme image 🖼
         </button>
-        <Meme src={imageUrl} topText={topText} bottomText={bottomText} />
+        <Meme
+          src={meme.imageUrl}
+          topText={meme.topText}
+          bottomText={meme.bottomText}
+        />
       </main>
     </>
   );
