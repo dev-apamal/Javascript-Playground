@@ -15,7 +15,7 @@ export default function Meme(props) {
             "2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000, 2px 2px 5px #000",
         }}
       >
-        Top Text
+        {props.topText ? props.topText : "Shut up"}
       </span>
       <span
         className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-4 px-1.5 font-impact text-2xl uppercase text-white tracking-wide"
@@ -24,7 +24,7 @@ export default function Meme(props) {
             "2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000, 2px 2px 5px #000",
         }}
       >
-        Bottom Text
+        {props.bottomText ? props.bottomText : "And Take The Money"}
       </span>
     </div>
   );
