@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function Meme(props) {
   const defaultImage = "./src/assets/image.png";
 
