@@ -6,6 +6,7 @@ export default {
     extend: {
       colors: {
         customBlueGray: '#0B2434',
+        buttonColor: '#5035FF',
       },
     },
   },
