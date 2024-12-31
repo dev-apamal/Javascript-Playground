@@ -4,11 +4,13 @@ import Dice from "./components/Dice";
 import React from "react";
 
 export default function App() {
-  const [diceValue, setDiceValue] = React.useState([
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-  ]);
+  const [diceValue, setDiceValue] = React.useState([]);
   const [click, setClick] = React.useState(1);
 
+  /* 
+  Generates an array of ten random numbers ranging from 1 to 6. 
+  Invoked each time the button is clicked to refresh the values. 
+  */
   React.useEffect(() => {
     const randomNumber = Array.from(
       { length: 10 },
@@ -17,13 +19,17 @@ export default function App() {
     setDiceValue(randomNumber);
   }, [click]);
 
-  const diceValues = diceValue.map(function (val, index) {
-    return <Dice value={val} key={index} />;
-  });
+  /* Generates a new array by mapping values from the `diceValue` array. This transformed array is subsequently used to render elements in the main display. */
+  const diceValues = diceValue.map((val, index) => (
+    <Dice value={val} key={index} click={recordDice} />
+  ));
 
-  function roll() {
-    return setClick(click + 1);
+  function recordDice() {
+    console.log(`Clicked`);
   }
+
+  /* Button handler to generate a random number, triggering the associated `useEffect` hook to execute its side effects. */
+  const roll = (event) => setClick(click + 1);
 
   return (
     <main className="bg-white h-full rounded flex flex-col justify-between items-center px-20 py-20">
