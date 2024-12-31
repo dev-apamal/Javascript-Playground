@@ -1,11 +1,11 @@
 import HeaderAndPara from "./components/HeaderAndPara";
 import ButtonComponent from "./components/ButtonComponent";
 import Dice from "./components/Dice";
-import React from "react";
+import React, { useRef } from "react";
 
 export default function App() {
   const [diceValue, setDiceValue] = React.useState([]);
-  const [click, setClick] = React.useState(1);
+  const [click, setClick] = React.useState(0);
 
   /* 
   Generates an array of ten random numbers ranging from 1 to 6. 
@@ -25,7 +25,10 @@ export default function App() {
   ));
 
   function recordDice() {
-    console.log(`Clicked`);
+    // Take the value from that specific button
+    // Change the style of that specific button
+    // Stops rendering that specific button again
+    console.log("Clicked");
   }
 
   /* Button handler to generate a random number, triggering the associated `useEffect` hook to execute its side effects. */
