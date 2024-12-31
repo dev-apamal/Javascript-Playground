@@ -1,6 +1,9 @@
-export default function ButtonComponent() {
+export default function ButtonComponent(props) {
   return (
-    <button className="px-4 py-4 bg-buttonColor rounded text-white font-bold">
+    <button
+      onClick={props.roll}
+      className="px-4 py-4 bg-buttonColor rounded text-white font-bold"
+    >
       Roll Now
     </button>
   );
