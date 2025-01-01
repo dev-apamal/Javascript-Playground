@@ -1,38 +1,45 @@
 import HeaderAndPara from "./components/HeaderAndPara";
 import ButtonComponent from "./components/ButtonComponent";
+import { v4 as uuidv4 } from "uuid";
 import Dice from "./components/Dice";
-import React, { useRef } from "react";
+import React from "react";
 
 export default function App() {
-  const [diceValue, setDiceValue] = React.useState([]);
-  const [click, setClick] = React.useState(0);
+  const [diceValue, setDiceValue] = React.useState(
+    Array.from({ length: 10 }, () => ({
+      id: uuidv4(),
+      value: Math.floor(Math.random() * 6) + 1,
+      held: false,
+    }))
+  );
 
-  /* 
-  Generates an array of ten random numbers ranging from 1 to 6. 
-  Invoked each time the button is clicked to refresh the values. 
-  */
-  React.useEffect(() => {
-    const randomNumber = Array.from(
-      { length: 10 },
-      () => Math.floor(Math.random() * 6) + 1
-    );
-    setDiceValue(randomNumber);
-  }, [click]);
-
-  /* Generates a new array by mapping values from the `diceValue` array. This transformed array is subsequently used to render elements in the main display. */
-  const diceValues = diceValue.map((val, index) => (
-    <Dice value={val} key={index} click={recordDice} />
+  const diceValues = diceValue.map((dice, index) => (
+    <Dice
+      key={dice.id || index}
+      value={dice.value}
+      isHeld={dice.held}
+      click={() => toggleHeld(dice.id)}
+    />
   ));
 
-  function recordDice() {
-    // Take the value from that specific button
-    // Change the style of that specific button
-    // Stops rendering that specific button again
-    console.log("Clicked");
-  }
+  const toggleHeld = (id) => {
+    setDiceValue((prevDiceValue) =>
+      prevDiceValue.map((dice) =>
+        dice.id === id ? { ...dice, held: true } : dice
+      )
+    );
+  };
 
-  /* Button handler to generate a random number, triggering the associated `useEffect` hook to execute its side effects. */
-  const roll = (event) => setClick(click + 1);
+  const roll = () => {
+    setDiceValue((prevDiceValue) => {
+      const newDiceValue = prevDiceValue.map((dice) =>
+        dice.held ? dice : { ...dice, value: Math.floor(Math.random() * 6) + 1 }
+      );
+      const allTrue = newDiceValue.every((value) => value.held === true);
+      allTrue ? console.log("You won") : null;
+      return newDiceValue;
+    });
+  };
 
   return (
     <main className="bg-white h-full rounded flex flex-col justify-between items-center px-20 py-20">
