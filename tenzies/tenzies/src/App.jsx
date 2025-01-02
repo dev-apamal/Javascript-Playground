@@ -1,53 +1,59 @@
-import HeaderAndPara from "./components/HeaderAndPara";
-import ButtonComponent from "./components/ButtonComponent";
+import Title from "./components/Title";
+import Button from "./components/Button";
 import { v4 as uuidv4 } from "uuid";
-import Dice from "./components/Dice";
+import Die from "./components/Die";
 import React from "react";
 
 export default function App() {
-  const [diceValue, setDiceValue] = React.useState(
-    Array.from({ length: 10 }, () => ({
+  const [dice, setDice] = React.useState(generateAllNewDice());
+
+  const gameWon =
+    dice.every((die) => die.isHeld) &&
+    dice.every((die) => die.value === dice[0].value);
+
+  function generateAllNewDice() {
+    const newDice = Array.from({ length: 10 }, () => ({
       id: uuidv4(),
       value: Math.floor(Math.random() * 6) + 1,
-      held: false,
-    }))
-  );
+      isHeld: false,
+    }));
+    return newDice;
+  }
 
-  const diceValues = diceValue.map((dice, index) => (
-    <Dice
-      key={dice.id || index}
-      value={dice.value}
-      isHeld={dice.held}
-      click={() => toggleHeld(dice.id)}
+  function hold(id) {
+    setDice((previousDice) =>
+      previousDice.map((dice) =>
+        dice.id === id ? { ...dice, isHeld: !dice.isHeld } : dice
+      )
+    );
+  }
+
+  const diceElements = dice.map((die) => (
+    <Die
+      key={die.id}
+      value={die.value}
+      hold={hold}
+      isHeld={die.isHeld}
+      id={die.id}
     />
   ));
 
-  const toggleHeld = (id) => {
-    setDiceValue((prevDiceValue) =>
-      prevDiceValue.map((dice) =>
-        dice.id === id ? { ...dice, held: true } : dice
+  function rollDice() {
+    setDice((previousDice) =>
+      previousDice.map((dice) =>
+        dice.isHeld ? dice : { ...dice, value: Math.ceil(Math.random() * 6) }
       )
     );
-  };
-
-  const roll = () => {
-    setDiceValue((prevDiceValue) => {
-      const newDiceValue = prevDiceValue.map((dice) =>
-        dice.held ? dice : { ...dice, value: Math.floor(Math.random() * 6) + 1 }
-      );
-      const allTrue = newDiceValue.every((value) => value.held === true);
-      allTrue ? console.log("You won") : null;
-      return newDiceValue;
-    });
-  };
+    gameWon ? setDice(generateAllNewDice) : null;
+  }
 
   return (
     <main className="bg-white h-full rounded flex flex-col justify-between items-center px-20 py-20">
-      <HeaderAndPara />
+      <Title />
       <div className="diceGrid grid gap-4 grid-cols-5 grid-rows-2">
-        {diceValues}
+        {diceElements}
       </div>
-      <ButtonComponent roll={roll} />
+      <Button gameWon={gameWon} roll={rollDice} />
     </main>
   );
 }

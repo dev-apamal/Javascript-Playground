@@ -1,10 +1,10 @@
-export default function ButtonComponent(props) {
+export default function Button(props) {
   return (
     <button
       onClick={props.roll}
       className="px-4 py-4 bg-buttonColor rounded text-white font-bold"
     >
-      Roll Now
+      {props.gameWon ? "New Game" : "Roll Now"}
     </button>
   );
 }

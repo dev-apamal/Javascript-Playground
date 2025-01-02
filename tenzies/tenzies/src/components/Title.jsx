@@ -1,4 +1,4 @@
-export default function HeaderAndPara() {
+export default function Title() {
   return (
     <section className="flex flex-col justify-center items-center gap-4 max-w-lg">
       <h1 className="font-bold text-4xl">Tenzies</h1>
