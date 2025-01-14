@@ -2,6 +2,7 @@ import EmptyState from "./components/EmptyState";
 import Header from "./components/Header";
 import List from "./components/List";
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
 
 export default function App() {
   const [taskName, setTaskName] = React.useState("");
@@ -11,21 +12,33 @@ export default function App() {
     event.preventDefault();
     setTaskList((prevTask) => [
       ...prevTask,
-      { name: taskName, isActive: true },
+      { id: uuidv4(), name: taskName, isActive: true },
     ]);
     setTaskName("");
     document.getElementById("taskInput").value = "";
   };
 
+  const handleDelete = (event) => {
+    const id = event.currentTarget.closest("li").id;
+    setTaskList((prevTask) => prevTask.filter((item) => item.id !== id));
+  };
+
   const list = taskList.map((task, index) => {
-    return <List key={index} value={task.name} />;
+    return (
+      <List
+        key={index}
+        value={task.name}
+        id={task.id}
+        deleteTask={handleDelete}
+      />
+    );
   });
 
   return (
     <>
       <Header />
       <main className="px-10 flex flex-col items-start gap-4 justify-center">
-        <form onSubmit={handleSubmit} className="w-full flex gap-2">
+        <form onSubmit={handleSubmit} className="w-full flex gap-2 pb-6">
           <input
             id="taskInput"
             type="text"
@@ -40,7 +53,7 @@ export default function App() {
           />
         </form>
         {taskList.length > 0 ? (
-          <ul className="flex flex-col gap-2">{list}</ul>
+          <ul className="flex flex-col gap-2 w-full">{list}</ul>
         ) : (
           <EmptyState />
         )}
