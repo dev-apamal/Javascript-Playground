@@ -23,13 +23,24 @@ export default function App() {
     setTaskList((prevTask) => prevTask.filter((item) => item.id !== id));
   };
 
+  const handleDone = (event) => {
+    const id = event.currentTarget.closest("li").id;
+    setTaskList((prevTask) =>
+      prevTask.map((item) =>
+        item.id === id ? { ...item, isActive: !item.isActive } : item
+      )
+    );
+  };
+
   const list = taskList.map((task, index) => {
     return (
       <List
-        key={index}
+        key={task.id}
         value={task.name}
         id={task.id}
         deleteTask={handleDelete}
+        done={handleDone}
+        isActive={task.isActive}
       />
     );
   });
@@ -37,7 +48,7 @@ export default function App() {
   return (
     <>
       <Header />
-      <main className="px-10 flex flex-col items-start gap-4 justify-center">
+      <main className="px-10 flex flex-col items-center gap-4 justify-center">
         <form onSubmit={handleSubmit} className="w-full flex gap-2 pb-6">
           <input
             id="taskInput"
