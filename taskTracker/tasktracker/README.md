@@ -16,6 +16,7 @@ This project is inspired by and based on the task tracker project idea from [roa
 2. **Event Handling**:
 3. **Dynamic DOM Updates**:
 
+
 ## Technology Stack
 - **React**: For building the UI components and handling state efficiently.
 - **JavaScript**: For core logic, including array manipulation and event handling.
