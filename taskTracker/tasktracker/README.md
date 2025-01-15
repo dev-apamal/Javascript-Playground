@@ -1,9 +1,9 @@
-# Task Tracker Project
+# Task Tracker Project 
 
 ## Overview
 This project is a simple **Task Tracker** application created using React. It allows users to manage tasks effectively by adding, deleting, and toggling the completion status of tasks. The primary goal of this project was to practice core JavaScript concepts such as array manipulation, event handling, and dynamic DOM updates, all while utilizing the React library.
 
-This project is inspired by and based on the task tracker project idea from [roadmap.sh](https://roadmap.sh/projects/task-tracker-js). Special thanks to them for the project concept.
+This project is inspired by and based on the task tracker project idea from [roadmap.sh](https://roadmap.sh/projects/task-tracker-js). https://roadmap.sh/projects/task-tracker-js Special thanks to them for the project concept.
 
 ## Features
 - **Task Management**: Add new tasks.
